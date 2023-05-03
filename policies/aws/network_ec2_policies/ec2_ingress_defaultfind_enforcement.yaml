@@ -1,0 +1,16 @@
+policies:
+  - name: ec2_ingress_defaultfind_enforcement
+    resource: security-group
+    comment: |
+      security groups that have SSH and RDP access from everywhere
+    filters:
+      - type: ingress
+        Ports: [22, 3389]
+      - type: ingress
+        Cidr:
+          value_type: cidr
+          op: eq
+          value: 0.0.0.0/0
+    actions:
+      - type: set-permissions
+        remove-ingress: matched

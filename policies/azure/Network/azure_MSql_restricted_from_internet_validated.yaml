@@ -1,0 +1,11 @@
+policies:
+  - name: azure_MSql_restricted_from_internet_validated
+    resource: azure.networksecuritygroup
+    description: |
+      Ensure that MSQL (TCP:4333) is restricted from the Internet
+    filters:
+      - type: ingress
+        access: 'Allow'
+        ipProtocol: 'TCP'
+        ports: '4333'
+        source: '0.0.0.0/0'

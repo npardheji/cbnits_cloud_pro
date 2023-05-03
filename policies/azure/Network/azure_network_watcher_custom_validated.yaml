@@ -1,0 +1,3 @@
+policies:
+  - name: azure_network_watcher_custom_validated
+    resource: azure.networkwatcher

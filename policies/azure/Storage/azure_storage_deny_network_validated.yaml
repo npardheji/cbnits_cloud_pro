@@ -1,0 +1,7 @@
+policies:
+    - name:     azure_storage_deny_network_validated
+      resource: azure.storage
+      filters:
+        - type:   value
+          key:    properties.networkAcls.defaultAction
+          value:  Allow

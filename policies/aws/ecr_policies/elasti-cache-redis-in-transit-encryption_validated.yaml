@@ -1,0 +1,7 @@
+policies:
+  - name: elasti-cache-redis-in-transit-encryption_validated
+    resource: cache-cluster
+    filters:
+      - type: value
+        key: TransitEncryptionEnabled
+        value: False

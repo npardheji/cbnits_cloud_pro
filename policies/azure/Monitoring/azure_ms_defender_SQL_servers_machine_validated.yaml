@@ -1,0 +1,9 @@
+policies:
+  - name: azure_ms_defender_SQL_servers_machine_validated
+    resource: azure.defender-pricing
+    description: |
+      Ensure that Microsoft Defender for SQL Servers is set to 'On'
+    filters:
+      - name: SqlServerVirtualMachines
+      - properties.pricingTier: Standard
+      

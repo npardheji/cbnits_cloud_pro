@@ -1,0 +1,9 @@
+policies:
+  - name: list_bucket_logging_validated
+    description: |
+      Check all bucket logging enabled
+    resource: gcp.bucket
+    filters:
+        - type: value
+          key: logging
+          value: absent

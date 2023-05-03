@@ -1,0 +1,10 @@
+policies:
+  - name: cloudtrail_logfile_enforcement
+    description: Cloudtrail logfile validation enabled
+    resource: cloudtrail
+    filters:
+      - LogFileValidationEnabled: False
+    actions:
+      - type: update-trail
+        attributes:
+          EnableLogFileValidation: True

@@ -1,0 +1,20 @@
+policies:
+- name: S3-HTTP_validated
+  resource: aws.s3
+  comment: |
+    Identify s3 where https is 
+    not enforced via bucket policy. By default, Amazon S3 allows   
+    both HTTP and HTTPS requests. To achieve only allowing access to 
+    Amazon S3 objects through HTTPS you also have to explicitly deny 
+    access to HTTP requests. Bucket policies that allow HTTPS 
+    requests without explicitly denying HTTP requests will not 
+    comply with this recommendation
+  filters:
+    - type: has-statement
+      statements: 
+        - Effect: Allow
+          Action: s3:GetObject
+          Principal: '*'
+          Condition:
+            Bool:
+              aws:SecureTransport: "true"

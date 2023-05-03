@@ -1,0 +1,9 @@
+policies:
+  - name: gcp-instance-detach-disks
+    resource: gcp.instance
+    filters:
+      - type: value
+        key: name
+        value: instance-1
+    actions:
+      - type: detach-disks

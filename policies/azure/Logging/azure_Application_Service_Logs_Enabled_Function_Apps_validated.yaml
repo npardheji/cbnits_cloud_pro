@@ -1,0 +1,7 @@
+policies:
+  - name: azure_Application_Service_Logs_Enabled_Function_Apps_validated
+    resource: azure.webapp
+    filters:
+      - type: configuration
+        key: httpLoggingEnabled
+        value: true

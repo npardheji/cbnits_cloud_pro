@@ -1,0 +1,9 @@
+policies:
+    - name: vm_check_ip_fwd_validated
+      description: |
+        IP Forwarding is enabled for this instance 
+      resource: gcp.instance
+      filters: 
+        - type: value
+          key:  canIpForward
+          value: true

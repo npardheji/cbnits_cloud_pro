@@ -1,0 +1,9 @@
+policies:
+  - name: iam-roles-no-ip-restriction_validated
+    resource: iam-role
+    comment: |
+      if the user wants to check all roles without ip-restriction
+
+    filters:
+      - type: no-specific-managed-policy
+        value: ip-restriction

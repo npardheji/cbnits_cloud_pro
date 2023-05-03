@@ -1,0 +1,9 @@
+policies:
+  - name: azure_vm_stoped_find_validated
+    resource: azure.vm
+    filters:
+     - type: instance-view
+       key: statuses[].code
+       op: not-in
+       value_type: swap
+       value: "PowerState/running"

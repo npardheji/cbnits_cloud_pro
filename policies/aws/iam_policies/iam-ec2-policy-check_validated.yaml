@@ -1,0 +1,5 @@
+policies:
+  - name: iam-ec2-policy-check_validated
+    resource: iam-policy
+    filters:
+      - type: has-allow-all

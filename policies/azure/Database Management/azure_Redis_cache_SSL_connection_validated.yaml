@@ -1,0 +1,11 @@
+policies:
+- name: azure_Redis_cache_SSL_connection_validated
+  resource: azure.redis
+  comment: |
+    Find all Redis Cache where data-in-transit encryption  
+    configuration is not enabled.  
+  filters:
+    - type: value
+      key: enableNonSslPort
+      op: ne
+      value: true

@@ -1,0 +1,10 @@
+policies:
+- name: iam-user-with-unused-access-keys_validated
+  resource: aws.iam-user
+  comment: |
+    
+  filters:
+    - not: 
+        - type: access-key
+          key: Status
+          value: Active

@@ -1,0 +1,7 @@
+policies:
+  - name: no_security_groups_allow_ingress_to_port_validated
+    resource: aws.security-group
+    filters:
+      - type: ingress
+        Ports: [22, 3389]
+        CidrV6: "::/0"

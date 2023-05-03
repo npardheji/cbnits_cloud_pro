@@ -1,0 +1,14 @@
+policies:
+  - name: azure_health_check_enable_enforcement
+    resource: azure.webapp-health
+
+#     {
+#     "cloud": "azure",
+#     "policy_type": "Monitoring",
+#     "policy": "custom_azure_health_check_enable_enforcement",
+#     "custom_env": {
+#         "resourceGroupName": "cloud-custodian",
+#         "appname": "chikentanduri",
+#         "healthCheckPath": "/path"
+#     }
+# }

@@ -1,0 +1,8 @@
+policies:
+  - name: default_net_check_validated
+    resource: gcp.vpc
+    filters:
+      - type:   value
+        key:    name
+        value:  "default"
+    # actions:

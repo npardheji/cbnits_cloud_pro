@@ -1,0 +1,3 @@
+policies:
+  - name: azure_webapp_windows_latest_dot_net_custom_enforcement
+    resource: azure.webappNet-windows

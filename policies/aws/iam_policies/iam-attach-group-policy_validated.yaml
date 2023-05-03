@@ -1,0 +1,10 @@
+policies:
+- name: iam-attach-group-policy_validated
+  resource: iam-group
+  actions:
+    - type: set-policy
+      state: detached
+      arn: "*"
+    - type: set-policy
+      state: attached
+      arn: arn:aws:iam::264054857189:policy/service-role/AWSLambdaBasicExecutionRole-2ca1d8d4-c378-48b2-aff7-2e8d1ef08a42

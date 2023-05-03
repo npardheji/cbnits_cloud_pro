@@ -1,0 +1,16 @@
+policies:
+- name: check-config-is-not-enabled_validated
+  resource: aws.account
+  comment: |
+    AWS Config is a web service that performs configuration 
+    management of supported AWS resources within your account
+    and delivers log files to you. The recorded information includes 
+    the configuration item (AWS resource), relationships between configuration 
+    items (AWS resources), any configuration changes between resources. 
+    It is recommended AWS Config be enabled in all regions.
+  filters:
+    - not:
+      - type: check-config
+        all-resources: true
+        global-resources: false
+        running: true

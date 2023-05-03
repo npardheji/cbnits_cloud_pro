@@ -1,0 +1,10 @@
+    policies:
+       - name: audit_role_assignment_manage_identity
+         resource: azure.roleassignment
+         description: | 
+          Ensure to audit role assignments that have implicit 'Managed Identity' permissions
+         filters:
+            - type: role
+              key: properties.roleName
+              op: regex
+              value: Managed Identity

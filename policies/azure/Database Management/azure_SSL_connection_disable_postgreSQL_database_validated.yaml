@@ -1,0 +1,10 @@
+policies:
+- name: azure_SSL_connection_disable_postgreSQL_database_Validated
+  resource: azure.postgresql-server
+  description: |
+      Find all SSl connection which is set to disable for postgreSQL Database Server
+  filters:
+    - type: value
+      key: sslEnforcement
+      op: ne
+      value: Enabled

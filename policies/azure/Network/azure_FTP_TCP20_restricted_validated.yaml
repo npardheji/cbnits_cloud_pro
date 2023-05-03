@@ -1,0 +1,12 @@
+policies:
+  - name: azure_FTP_TCP20_restricted_validated
+    resource: azure.networksecuritygroup
+    filters:
+      - type: ingress
+        access: 'Allow'
+        ipProtocol: 'TCP'
+        ports: '20'
+        source: '0.0.0.0/0'
+    actions:
+      - type: close
+        direction: 'Inbound'

@@ -1,0 +1,3 @@
+policies:
+  - name: azure_postgreSQL_log_checkpoints_custom_enforcement
+    resource: azure.postgreysql-log-checkpoint

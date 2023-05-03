@@ -1,0 +1,12 @@
+policies:
+  - name: azure_overly_permissive_UDP_NSG_enforcement
+    resource: azure.networksecuritygroup
+    filters:
+      - type: ingress
+        access: 'Allow'
+        ipProtocol: 'UDP'
+        source: '0.0.0.0/0'
+    actions:
+      - type: close
+        direction: 'Inbound'
+        ipProtocol: 'UDP'

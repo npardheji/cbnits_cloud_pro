@@ -1,0 +1,20 @@
+policies:
+- name: iam-user-for-daily-tasks_validated
+  resource: aws.iam-user
+  comment: |
+    With the creation of an AWS account, a root user is created that 
+    cannot be disabled ot deleted. That user has unrestricted access 
+    to and control over all resources in the AWS account. It is 
+    highly recommended that the use of this account be avoided for 
+    everyday tasks.
+  filters:
+    - type: credential
+      key: password_last_used
+      op: lt
+      value: 7
+      value_type: age
+    - type: credential
+      key: access_keys.last_used_date
+      op: lt
+      value: 7
+      value_type: age 

@@ -1,0 +1,10 @@
+policies:
+  - name: azure_dns_udp_restricted_from_internet_enforcement
+    resource: azure.nsgRule
+    direction: 'Inbound'
+    access: 'Deny'
+    protocol: 'UDP'
+    destination_port_range: '53'
+    #source_address_prefix: '0.0.0.0/0'
+    destination_address_prefix: '*'
+    source_port_range: '*'

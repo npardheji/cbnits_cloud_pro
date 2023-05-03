@@ -1,0 +1,11 @@
+policies:
+  - name: azure_functionapp_clinte_certificate_enable_validated
+    resource: azure.webapp
+    description: |
+     client certificate
+    filters:
+      - type: value
+        key: properties.clientCertEnabled
+        op: eq
+        value: true
+    

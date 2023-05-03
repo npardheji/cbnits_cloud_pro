@@ -1,0 +1,9 @@
+policies:
+- name: azure_managed_identity_used_function_app_validated
+  resource: azure.webapp
+  description: |
+     Find webapp where managed identity is present.
+  filters:
+    - type: value
+      key: identity.[UserAssigned]
+      value: present

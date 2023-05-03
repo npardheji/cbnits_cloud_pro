@@ -1,0 +1,3 @@
+policies:
+  - name: azure_PostgreSQL_log_disconnections_custom_enforcement
+    resource: azure.postgreysql-log-disconnection

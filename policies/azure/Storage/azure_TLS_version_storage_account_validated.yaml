@@ -1,0 +1,9 @@
+policies:
+- name: azure_TLS_version_storage_account_validated
+  resource: azure.storage
+  filters:
+    - type: value
+      key: properties.minimumTlsVersion
+      op: ne
+      value: "TLS1_2"
+

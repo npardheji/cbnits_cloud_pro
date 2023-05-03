@@ -1,0 +1,45 @@
+policies:  
+  - name: auto_tag_VM_enforced
+    description: auto-tags-vm
+    resource: gcp.bucket
+    mode:
+        type: gcp-audit
+        methods: 
+          - AutoTag
+    filters:
+        - type: value
+          key: logging
+          value: absent
+    actions:
+      - type: webhook
+        url: 'https://hooks.slack.com/services/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'
+        body: |-
+          {
+            "attachments": [
+              {
+                "fallback": `CloudCustodian Policy Violation`,
+                "title": policy.description,
+                "color": `danger`,
+                "fields": [
+                  {
+                    "title": `Priority`,
+                    "value": `High`,
+                    "short": `true`
+                  },
+                  {
+                    "title": `Bucket Name`,
+                    "value": resource.name,
+                    "short": `true`
+                  },
+                  {
+                    "title": `Bucket selfLink`,
+                    "value": resource.selfLink,
+                    "short": `false`
+                  }
+                ],
+                "footer": `Powered By SaumoB`,
+                "thumb_url": `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6UDwtSRSlClnQat5SFoxrvd0DBp1-REYqqA&usqp=CAU`,
+                "footer_icon": "https://platform.slack-edge.com/img/default_application_icon.png"
+              }
+            ]
+          }

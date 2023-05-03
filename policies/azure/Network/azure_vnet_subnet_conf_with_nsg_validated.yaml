@@ -1,0 +1,7 @@
+ policies:
+    - name: azure_vnet_subnet_conf_with_nsg_validated
+      resource: azure.vnet
+      filters:
+        - type: value
+          key: properties.subnets[0].properties.networkSecurityGroup
+          value: present

@@ -1,0 +1,17 @@
+policies:  
+  - name: compute-schedule-weekday-1800-stop
+    description: Stop instances at 1800 every weekday.
+    resource: gcp.instance
+    filter:
+      # - "tag:name": "md-test"
+      - not:
+        - "tag:schedule": "no-schedule"
+        - "tag:schedule": empty
+      - "tag:schedule": "weekday-0430-1800"
+      - type: offhour
+        tag: schedule
+        default_tz: ct
+        opt-out: true
+        offhour: 18
+    actions:
+      - stop

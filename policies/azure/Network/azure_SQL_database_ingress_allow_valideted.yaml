@@ -1,0 +1,6 @@
+policies:
+  - name: azure_SQL_database_ingress_allow_valideted
+    resource: azure.sqlserver
+    filters:
+      - type: firewall-rules
+        include: ['0.0.0.0/0']

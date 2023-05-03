@@ -1,0 +1,10 @@
+policies:
+  - name: gcp-add-multiple-labels
+    resource: gcp.instance
+    description: |
+      Label all existing instances with multiple labels
+    actions:
+     - type: set-labels
+       labels:
+         environment: test
+         env_type: customer

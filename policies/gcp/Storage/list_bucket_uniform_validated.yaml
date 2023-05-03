@@ -1,0 +1,11 @@
+policies:
+  - name: list_bucket_uniform_validated
+    description: |
+      It is recommended that uniform bucket-level access is enabled on
+      Cloud Storage buckets.
+    resource: gcp.bucket
+    filters:
+      # - not:
+        - type: value
+          key: "iamConfiguration.uniformBucketLevelAccess.enabled"
+          value: true

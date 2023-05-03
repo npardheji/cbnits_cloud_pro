@@ -1,0 +1,9 @@
+ policies:
+  - name: azure_ms_defender_for_storage_account_on_validated
+    resource: azure.defender-pricing
+    description: |
+      Ensure that Microsoft Defender for Storage is set to 'On'
+    filters:
+      - name: StorageAccounts
+      - properties.pricingTier: Standard
+      

@@ -1,0 +1,11 @@
+policies:
+  - name: azure_RPC_restricted_from_internet_validated
+    resource: azure.networksecuritygroup
+    description: |
+      Ensure that Windows RPC (TCP:135) is restricted from the Internet
+    filters:
+      - type: ingress
+        access: 'Allow'
+        ipProtocol: 'TCP'
+        ports: '135'
+        source: '0.0.0.0/0'

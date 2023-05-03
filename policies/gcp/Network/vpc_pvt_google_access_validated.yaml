@@ -1,0 +1,10 @@
+policies:
+  - name: vpc_pvt_google_access__validate
+    description:  Lists Vpc Private Google Access to be enabled
+    resource: gcp.subnet
+    filters:
+      - type:   value
+        key:    privateIpGoogleAccess
+        value:  false
+    # actions:
+    #   - set-gcp-private # To be enabled once working in future

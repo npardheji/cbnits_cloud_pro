@@ -1,0 +1,10 @@
+policies:
+ - name: block-ssh-keys-vpc_validated
+   description: |
+      Ensure BLOCK PROJECT-WIDE SSH KEYS enabled for vm
+   resource: gcp.instance
+   filters:
+   -  type: value
+      key: metadata.items[].key
+      value: present
+      op: eq

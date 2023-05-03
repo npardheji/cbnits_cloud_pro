@@ -1,0 +1,9 @@
+policies:
+  - name: azure_function_app_to_https_validated
+    resource: azure.webapp
+    description: |
+      Find the function app which is not accessible over HTTPS
+    filters:
+      - type: value
+        key: properties.httpsOnly
+        value: false

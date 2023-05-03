@@ -1,0 +1,11 @@
+policies:
+  - name: sinks-logs_validated
+    description: |
+      It is recommended to create a sink that will export copies of all the log entries
+    resource: gcp.log-project-sink
+    filters:
+    - type: value
+      key: filter
+      value: empty
+    actions:
+    - delete 

@@ -1,0 +1,3 @@
+policies:
+  - name: azure_webapp_latest_Java_version_custom_enforcement
+    resource: azure.webappJava-windows

@@ -1,0 +1,18 @@
+policies:
+- name: iam-user-key-rotation_validated
+  resource: aws.iam-user
+  comment: |
+    Access keys should be rotated to ensure that data cannot be  
+    accessed with an old key which might have been lost, cracked, or 
+    stolen. Rotating access keys will reduce that window of 
+    opportunity for an access key that is associated with a    
+    compromised or terminated account to be used.
+  filters:
+    - type: credential
+      key: access_keys.active
+      value: true
+    - type: credential
+      key: access_keys.last_rotated
+      value: 10
+      op: gt
+      value_type: age

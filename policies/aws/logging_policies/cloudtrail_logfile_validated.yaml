@@ -1,0 +1,6 @@
+policies:
+  - name: cloudtrail_logfile_validated
+    description: Cloudtrail logfile validation enabled
+    resource: cloudtrail
+    filters:
+      - LogFileValidationEnabled: True

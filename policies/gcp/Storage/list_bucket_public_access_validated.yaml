@@ -1,0 +1,10 @@
+policies:
+  - name: list_bucket_public_access_validated
+    description: |
+      The following Cloud Storage bucket has public access protection not enforced.
+    resource: gcp.bucket
+    filters:
+      - not:
+          - type: value
+            key: "iamConfiguration.publicAccessPrevention"
+            value: "enforced"

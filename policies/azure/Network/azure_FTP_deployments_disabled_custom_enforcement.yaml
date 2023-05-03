@@ -1,0 +1,3 @@
+policies:
+  - name: NSG-rule
+    resource: azure.webappftp

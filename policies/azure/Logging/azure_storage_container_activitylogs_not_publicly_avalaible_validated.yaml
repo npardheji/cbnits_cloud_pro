@@ -1,0 +1,14 @@
+policies:
+  - name: azure_storage_container_activitylogs_not_publicly_avalaible_validated
+    resource: azure.storage-container
+    filters:
+      - not:
+          - or:
+              - type: value
+                key: properties.publicAccess
+                op: contains
+                value: Blob
+              - type: value
+                key: properties.publicAccess
+                op: contains
+                value: Container

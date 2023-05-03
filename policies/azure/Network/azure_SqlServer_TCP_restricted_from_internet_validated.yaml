@@ -1,0 +1,11 @@
+policies:
+  - name: azure_SqlServer_TCP_restricted_from_internet_validated
+    resource: azure.networksecuritygroup
+    description: |
+      Ensure that SQL Server (TCP:1433) is restricted from the Internet
+    filters:
+      - type: ingress
+        access: 'Allow'
+        ipProtocol: 'TCP'
+        ports: '1433'
+        source: '0.0.0.0/0'

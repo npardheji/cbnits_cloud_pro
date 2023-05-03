@@ -1,0 +1,45 @@
+policies:
+- name: unused-service-accounts
+  resource: gcp.service-account
+  filters:
+  - type: metrics
+    name: iam.googleapis.com/service_account/authn_events_count
+    value: -1
+    days: 1
+    missing-value: -1
+    op: eq
+    aligner: ALIGN_SUM
+  actions:
+    - disable
+    - type: webhook
+      url: 'https://hooks.slack.com/services/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'
+      body: |-
+        {
+          "attachments": [
+            {
+              "fallback": `CloudCustodian Policy Violation`,
+              "title": policy.description,
+              "color": `danger`,
+              "fields": [
+                {
+                  "title": `Priority`,
+                  "value": `High`,
+                  "short": `true`
+                },
+                {
+                  "title": `Bucket Name`,
+                  "value": resource.name,
+                  "short": `true`
+                },
+                {
+                  "title": `Bucket selfLink`,
+                  "value": resource.selfLink,
+                  "short": `false`
+                }
+              ],
+              "footer": `Powered By Nikhil`,
+              "thumb_url": `https://play-lh.googleusercontent.com/lV1DhBeSuikQy6fLPhgfNHUxDqterNlur4oB1Z_Yr0NOSiWwQOD0g8gWCjVf1mmMuw`,
+              "footer_icon": "https://platform.slack-edge.com/img/default_application_icon.png"
+            }
+          ]
+        }

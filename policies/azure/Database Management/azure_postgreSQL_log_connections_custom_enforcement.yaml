@@ -1,0 +1,3 @@
+policies:
+  - name: azure_PostgreSQL_log_connections_custom_enforcement
+    resource: azure.postgreysql-log-connection

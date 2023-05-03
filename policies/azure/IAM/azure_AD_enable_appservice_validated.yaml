@@ -1,0 +1,9 @@
+policies:
+- name: azure_AD_enable_appservice_validated
+  resource: azure.webapp
+  description: |
+     Find webapp where principalId is empty.
+  filters:
+    - type: value
+      key: identity.[PrincipalId]
+      value: absent

@@ -1,0 +1,8 @@
+policies:
+  - name: azure_NSG_allow_ingress_0.0.0.0_ICMP_validated
+    resource: azure.networksecuritygroup
+    filters:
+      - type: ingress
+        access: 'Allow'
+        ipProtocol: '*'
+        source: '0.0.0.0/0'

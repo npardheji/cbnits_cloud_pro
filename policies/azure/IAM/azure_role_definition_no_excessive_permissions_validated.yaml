@@ -1,0 +1,20 @@
+policies:
+  - name: azure_role_definition_no_excessive_permissions_validated
+    resource: azure.roleassignment
+    description: | 
+     azure_audit_role_assignments_managed_identity_permissions_validated
+    filters:
+      - not:
+        - or:
+          - type: role
+            key: properties.roleName
+            op: in
+            value: Owner
+          - type: role
+            key: properties.roleName
+            op: regex
+            value: Contributor
+          - type: role
+            key: properties.roleName
+            op: regex
+            value: Role Based Access Control Administrator

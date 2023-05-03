@@ -1,0 +1,10 @@
+    policies:
+       - name: azure_audit_role_assignment_have_owner_permission_validated
+         resource: azure.roleassignment
+         description: | 
+          Ensure to audit role assignments that have implicit 'Owner' permissions
+         filters:
+            - type: role
+              key: properties.roleName
+              op: in
+              value: Owner

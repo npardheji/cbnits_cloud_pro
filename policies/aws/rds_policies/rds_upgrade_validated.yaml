@@ -1,0 +1,6 @@
+policies:
+  - name: rds_upgrade_validated
+    resource: rds
+    filters:
+      - type: upgrade-available
+        major: False

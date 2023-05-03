@@ -1,0 +1,14 @@
+policies:
+- name: iam-user-with-active-keys_validated
+  resource: aws.iam-user
+  comment: |
+    Access keys are long-term credentials for an IAM user or the AWS 
+    account root user. You can use access keys to sign programmatic  
+    requests to the AWS CLI or AWS API. One of the best ways to 
+    protect your account is to not allow users to have multiple 
+    access keys. This policy provides all the keys that are 
+    activated for the IAM user for investigation.
+  filters:
+    - type: access-key
+      key: Status
+      value: Active

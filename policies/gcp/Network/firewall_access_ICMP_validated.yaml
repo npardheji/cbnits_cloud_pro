@@ -1,0 +1,37 @@
+policies:
+    - name: firewall_access_ICMP_validated
+      description: |
+        GCP firewall accepts from "0.0.0.0/0" 
+      resource: gcp.firewall
+      # mode:
+      #   type: gcp-audit
+      #   methods: 
+      #     - AutoTag
+
+      filters:
+        - and:
+          - type: value
+            key: direction
+            value: INGRESS
+
+          - type: value
+            key: sourceRanges
+            value: 
+              - "0.0.0.0/0"
+
+          - type: value
+            key:  allowed[].IPProtocol
+            op: contains
+            value:  "icmp"
+          
+          - type: value
+            key:  allowed[].ports
+            op: contains
+            value:
+              - "60" # should be edited to the desired known tcp port 
+
+      # actions:
+      #   - type: modify
+      #     sourceRanges: 
+      #         - "0.0.0.0/0"
+          

@@ -1,0 +1,8 @@
+ policies:
+  - name: azure_ms_defender_for_server_on_validated
+    resource: azure.defender-pricing
+    description: |
+        Ensure that Microsoft Defender for Servers is set to 'On'
+    filters:
+      - name: VirtualMachines
+      - properties.pricingTier: Standard

@@ -1,0 +1,15 @@
+    
+policies:
+- name: iam-delete-unused-role_enforcement
+  resource: iam-role
+  comment: |
+    To delete IAM Role you must first delete the policies that are 
+    associated with the role. Also, you need to remove the role 
+    from all instance profiles that the role is in.
+  filters:
+    - type: usage
+      match-operator: all
+      LastAuthenticated: null
+  actions:
+    - type: delete
+      force: true

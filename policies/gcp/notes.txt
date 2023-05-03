@@ -1,0 +1,3 @@
+To run the policies we have to configure the respective name of the resources that is set in Google Cloud.
+
+

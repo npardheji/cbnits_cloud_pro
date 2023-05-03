@@ -1,0 +1,10 @@
+policies:
+  - name: Bucket_Europe_validated
+    description: |
+      list of buckets outside of europe region
+    resource: gcp.bucket
+    filters:
+      - not:
+          - type: value
+            key: location
+            value: "EUROPE-NORTH1"

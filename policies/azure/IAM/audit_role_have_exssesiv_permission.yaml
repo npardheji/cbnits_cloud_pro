@@ -1,0 +1,20 @@
+policies:
+  - name: audit_role_have_exssesiv_permission
+    resource: azure.roleassignment
+    description: | 
+      Ensure to audit role assignments that have implicit 'exssesive' permissions
+    filters:
+      - not:
+        - or:
+          - type: role
+            key: properties.roleName
+            op: regex
+            value: Owner
+          - type: role
+            key: properties.roleName
+            op: regex
+            value: Role Based Access Control Administrator
+          - type: role
+            key: properties.roleName
+            op: regex
+            value: Contributor

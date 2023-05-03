@@ -1,0 +1,12 @@
+policies:
+    - name:     azure_recover_keyvault_validated
+      resource: azure.keyvault
+      filters:
+        - not:
+          - and:
+            - type:   value
+              key:    properties.accessPolicies[].permissions.enableSoftDelete
+              value:  true
+            - type:   value
+              key:    properties.accessPolicies[].permissions.enablePurgeProtection
+              value:  true

@@ -1,0 +1,11 @@
+policies:
+  - name: iam-analyzer-s3-check_validated
+    resource: aws.s3
+    comment: |
+      Access analyzer uses logic based reasoning to analyze embedded resource 
+      iam access policies to determine access outside of a zone of trust.
+
+    filters:
+      - type: iam-analyzer
+        key: isPublic
+        value: true

@@ -1,0 +1,10 @@
+policies:
+  - name: mark-unused-sgroups_enforcement
+    resource: ec2.security-group
+    region: us-west-2
+    filters:
+      - type: marked-for-op
+        op: delete
+    actions:
+      - type: unmark
+      - type: delete

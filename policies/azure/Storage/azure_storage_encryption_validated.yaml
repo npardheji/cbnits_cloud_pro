@@ -1,0 +1,11 @@
+policies:
+    - name: azure_storage_encryption_validated
+      description: |
+          The storage have key not managed by keyvaults.
+      resource: azure.storage
+      filters:
+          - type: value
+            key: properties.encryption.keySource
+            value: Microsoft.Microsoft.Keyvault
+            op: ne
+      

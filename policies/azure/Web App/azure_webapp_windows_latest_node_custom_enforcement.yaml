@@ -1,0 +1,3 @@
+policies:
+  - name: azure_webapp_windows_latest_node_custom_enforcement
+    resource: azure.webappNode-windows

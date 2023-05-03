@@ -1,0 +1,8 @@
+policies:  
+  - name: cloud_dns_loging_validated
+    description: Network with logging disabled
+    resource: gcp.firewall
+    filters:
+      - type: value
+        key: logConfig.enable
+        value: false

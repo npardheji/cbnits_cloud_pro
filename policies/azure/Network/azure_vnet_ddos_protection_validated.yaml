@@ -1,0 +1,8 @@
+policies:
+  - name: azure_vnet_ddos_protection_validated
+    resource: azure.vnet
+    filters:
+      - type: value
+        key: properties.enableDdosProtection
+        op: equal
+        value: False

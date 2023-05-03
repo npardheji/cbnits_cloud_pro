@@ -1,0 +1,10 @@
+policies:
+  - name: no_security_groups_allow_ingress_from_0.0.0.0_to_ports_enforcement
+    resource: aws.security-group
+    filters:
+      - type: ingress
+        Ports: [22, 3389]
+        Cidr: "0.0.0.0/0"
+    actions:
+      - type: set-permissions
+        remove-ingress: matched

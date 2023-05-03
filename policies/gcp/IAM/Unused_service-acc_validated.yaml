@@ -1,0 +1,13 @@
+policies:
+- name: Unused_service-acc_validated
+  resource: gcp.service-account
+  filters:
+    type: metrics
+    name: iam.googleapis.com/service_account/authn_events_count
+    value: -1
+    days: 1
+    missing-value: -1
+    op: eq
+    aligner: ALIGN_SUM
+  # actions:
+  #   - disable

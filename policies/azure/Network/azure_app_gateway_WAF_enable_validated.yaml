@@ -1,0 +1,8 @@
+policies:
+- name: azure_app_gateway_WAF_enable_validated
+  resource: azure.application-gateway
+  description: Ensure Azure Application Gateway Web application firewall (WAF) is enabled
+  filters:
+    - type: value
+      key: properties.webApplicationFirewallConfiguration.enabled
+      value: false

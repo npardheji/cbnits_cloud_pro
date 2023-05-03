@@ -1,0 +1,7 @@
+policies:
+    - name:       azure_vm_auto_log_validated
+      resource:   azure.defender-autoprovisioning
+      filters:
+        - type:   value
+          key:    properties.autoProvision
+          value:  'Off'

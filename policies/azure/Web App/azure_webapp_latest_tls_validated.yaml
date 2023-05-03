@@ -1,0 +1,8 @@
+policies:
+  - name: azure_webapp_latest_tls_validated.yaml
+    resource: azure.webapp
+    filters:
+      - type: configuration
+        key: minTlsVersion
+        op: ne
+        value: '1.2'

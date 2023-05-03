@@ -1,0 +1,10 @@
+policies:
+- name: instance_service_accnt_check_validated
+  description: |
+    The instances have access to the default service account access
+  resource: gcp.instance
+  filters:
+    - type: value
+      key:  serviceAccounts[].email
+      op: contains
+      value: "698842388377-compute@developer.gserviceaccount.com" #to set the mail of the default service accnt with all privileges

@@ -1,0 +1,10 @@
+policies:
+  - name: azure_windonws_smb_tcp445_restricted_internet_enforcement
+    resource: azure.nsgRule
+    direction: 'Inbound'
+    access: 'Deny'
+    protocol: 'TCP'
+    destination_port_range: '445'
+    #source_address_prefix: '0.0.0.0/0'
+    destination_address_prefix: '*'
+    source_port_range: '*'

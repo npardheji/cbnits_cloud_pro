@@ -1,0 +1,6 @@
+#isScaleSetVm
+policies:
+    - name: azure_availabilityset_validated
+      description: |
+          ""
+      resource: azure.vm

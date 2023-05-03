@@ -1,0 +1,6 @@
+policies:
+  - name: ec2-filter-old-stop_validated
+    resource: ec2
+    filters:
+      - type: instance-age
+        days: 1

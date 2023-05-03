@@ -1,0 +1,10 @@
+policies:
+- name: s3-containing-cloudtrail-logs-is-public_validated
+  resource: aws.s3
+  comment: |
+    CIS AWS Foundations v1.4.0 (3.3)
+  filters:
+    - not:
+      - type: check-public-block
+        BlockPublicAcls: false
+        BlockPublicPolicy: true

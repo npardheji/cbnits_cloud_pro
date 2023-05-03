@@ -1,0 +1,14 @@
+policies:
+- name: iam_no_root_acess_validated
+  resource: aws.account
+  comment: |
+    The root user account is the most privileged user in AWS.
+    AWS access keys provide programmatic access to a given AWS        
+    account. It is recommended that all access keys associated with 
+    the root account be removed. 
+  filters:
+    - type: iam-summary
+      key: AccountAccessKeysPresent
+      op: eq
+      value: true
+      value_type: swap

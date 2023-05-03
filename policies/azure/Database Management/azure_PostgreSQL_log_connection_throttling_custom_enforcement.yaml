@@ -1,0 +1,3 @@
+policies:
+  - name: azure_PostgreSQL_log_connection_throttling_custom_enforcement
+    resource: azure.postgreysql-connection-throttling

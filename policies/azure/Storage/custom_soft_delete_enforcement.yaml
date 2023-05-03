@@ -1,0 +1,6 @@
+policies:
+    - name: custom_soft_delete_enable_enforcement.yaml
+      description: |
+          Ensuring soft delete for azure storage account is enabled
+          
+      resource: azure.soft_delete_enable

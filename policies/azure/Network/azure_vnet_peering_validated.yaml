@@ -1,0 +1,8 @@
+    policies:
+      - name: azure_vnet_peering_validated
+        resource: azure.vnet
+        filters:
+          - type: value
+            key: properties.virtualNetworkPeerings[0].properties.peeringState
+            op: eq
+            value: Connected

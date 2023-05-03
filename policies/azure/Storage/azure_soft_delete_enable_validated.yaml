@@ -1,0 +1,11 @@
+policies:
+    - name: azure_soft_delete_enable_validated
+      description: |
+          Ensuring soft delete for all azure storage account is disable
+          
+      resource: azure.storage
+
+      filters:
+      - type: blob-services
+        key: deleteRetentionPolicy.enabled
+        value: false

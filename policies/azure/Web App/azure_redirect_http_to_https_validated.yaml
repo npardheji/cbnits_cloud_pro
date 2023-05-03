@@ -1,0 +1,9 @@
+policies:
+  - name: azure_redirect_http_to_https_validated
+    resource: azure.webapp
+    description: |
+      Ensure web app redirects all HTTP traffic to HTTPS in Azure App Service
+    filters:
+      - type: value
+        key: properties.httpsOnly
+        value: false

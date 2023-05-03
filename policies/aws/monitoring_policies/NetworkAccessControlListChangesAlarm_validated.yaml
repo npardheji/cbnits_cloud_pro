@@ -1,0 +1,8 @@
+policies:
+  - name: NetworkAccessControlListChangesAlarm_validated
+    resource: alarm
+    filters:
+      - type: value
+        key: MetricName
+        op: eq
+        value: NetworkAccessControlListChanges

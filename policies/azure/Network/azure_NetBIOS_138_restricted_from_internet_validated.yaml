@@ -1,0 +1,11 @@
+policies:
+  - name: azure_NetBIOS_138_restricted_from_internet_validated
+    resource: azure.networksecuritygroup
+    description: |
+      Ensure that NetBIOS (UDP:138) is restricted from the Internet
+    filters:
+      - type: ingress
+        access: 'Allow'
+        ipProtocol: 'UDP'
+        ports: '138'
+        source: '0.0.0.0/0'

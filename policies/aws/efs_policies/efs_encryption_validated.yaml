@@ -1,0 +1,8 @@
+policies:
+  - name: efs_encryption_validated
+    resource: aws.efs
+    filters:
+      - type: value 
+        key: Encrypted 
+        op: eq
+        value: True

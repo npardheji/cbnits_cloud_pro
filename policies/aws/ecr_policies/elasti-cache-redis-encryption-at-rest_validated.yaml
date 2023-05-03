@@ -1,0 +1,7 @@
+policies:
+  - name: elasti-cache-redis-encryption-at-rest_validated
+    resource: cache-cluster
+    filters:
+      - type: value
+        key: AtRestEncryptionEnabled
+        value: False

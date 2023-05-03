@@ -1,0 +1,11 @@
+policies:
+- name: azure_builtin_authentication_set_on_validated
+  resource: azure.webapp
+  description: |
+     Find all azure functions where in-built authentication and 
+     authorization has not been turned ON.
+  filters:
+    - type: configuration
+      key: enabled
+      op: ne
+      value: true

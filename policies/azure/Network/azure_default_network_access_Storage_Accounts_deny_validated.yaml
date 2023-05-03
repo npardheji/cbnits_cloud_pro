@@ -1,0 +1,9 @@
+policies:
+  - name: azure_default_network_access_Storage_Accounts_deny_validate
+    resource: azure.storage
+    filters:
+      - type: value
+        key: properties.networkAcls.defaultAction
+        op: ne
+        value: "Allow"
+        

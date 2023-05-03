@@ -1,0 +1,10 @@
+policies:
+  - name: azure_audit_role_assignments_managed_identity_permissions_validated
+    resource: azure.roleassignment
+    description: | 
+     azure_audit_role_assignments_managed_identity_permissions_validated
+    filters:
+      - type: role
+        key: properties.roleName
+        op: regex-case
+        value: Managed Identity 

@@ -1,0 +1,15 @@
+policies:
+- name: cloudtrail_enable_all_region_validated
+  description: cloudtrail is enabled for all regions
+  resource: aws.cloudtrail
+  filters:
+    -  IsMultiRegionTrail: true
+
+
+
+#   mode:
+#     schedule: “rate(24 hours)”
+#     type: periodic
+#     execution-options:
+#       output_dir: s3://s3bucket/
+#     runtime: python3.8

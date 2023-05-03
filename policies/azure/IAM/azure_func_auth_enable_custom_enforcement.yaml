@@ -1,0 +1,3 @@
+policies:
+  - name: azure_func_auth_enable_custom_enforcement
+    resource: azure.webapp-Auth

@@ -1,0 +1,13 @@
+policies:
+    - name: azure_add_tag_single_vm_enforcement
+      description: |
+        Adds tag to a single virtual machines
+      resource: azure.vm
+      filters:
+        - type: value
+          key: name
+          value: myvmname
+      actions:
+       - type: tag
+         tag: Hello
+         value: World

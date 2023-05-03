@@ -1,0 +1,10 @@
+policies:
+- name: iam-no-used-all-all-policy_validated
+  resource: aws.iam-policy
+  comment: |
+    Providing full administrative privileges instead of restricting 
+    to the minimum set of permissions that the user is required to 
+    do exposes the resources to potentially unwanted actions.
+  filters:
+    - type: used
+    - type: has-allow-all

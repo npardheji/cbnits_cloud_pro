@@ -1,0 +1,10 @@
+policies:
+- name: S3-employ-encryption_validated
+  resource: aws.s3
+  comment: |
+    This policy identifies if the IAM Access Analyzer is enabled.
+    Active = Monitoring ON DISABLED = Monitoring OFF (false) or ON (True)
+  filters:
+    - tag : absent
+    - type: bucket-encryption
+      state: True         

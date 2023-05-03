@@ -1,0 +1,8 @@
+policies:
+  - name: azure_ms_defender_keyvaults_validated
+    resource: azure.defender-pricing
+    description: |
+      Ensure that Microsoft Defender for Key Vault is set to 'On'
+    filters:
+      - name: KeyVaults
+      - properties.pricingTier: Standard

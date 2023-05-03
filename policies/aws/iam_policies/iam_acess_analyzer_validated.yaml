@@ -1,0 +1,8 @@
+policies:
+  - name: iam_acess_analyzer_validated
+    resource: account
+    filters:
+      - type: access-analyzer
+        key: 'status'
+        value: ACTIVE
+        op: eq

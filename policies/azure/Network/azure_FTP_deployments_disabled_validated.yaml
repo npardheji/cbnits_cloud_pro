@@ -1,0 +1,10 @@
+policies:
+- name: azure_FTP_deployments_disabled_validated
+  resource: azure.webapp
+  description: |
+     FTP-deployments-disbled
+  filters:
+    - type: configuration
+      key: ftpsState
+      op: eq
+      value: Disabled

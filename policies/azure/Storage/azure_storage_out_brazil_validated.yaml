@@ -1,0 +1,8 @@
+policies:
+  - name: azure_storage_out_brazil_validated
+    resource: azure.storage
+    filters:
+      - type: value
+        key: location
+        op: eq
+        value: brazilsouth

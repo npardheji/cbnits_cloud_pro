@@ -1,0 +1,16 @@
+policies:
+- name: root-must-use-mfa_validated
+  resource: aws.account
+  comment: |
+    The root user account is the most privileged user in AWS.
+    Multi-factor Authentication (MFA) adds an extra layer of 
+    protection on top of a username and password. With MFA enabled, 
+    when a user signs in to an AWS website, they will be prompted 
+    for their username and password as well as for an authentication 
+    code from their AWS MFA device.
+  filters:
+    - type: iam-summary
+      key: AccountMFAEnabled
+      op: eq
+      value: false
+      value_type: swap

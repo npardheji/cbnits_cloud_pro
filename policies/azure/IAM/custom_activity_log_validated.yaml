@@ -1,0 +1,5 @@
+policies:
+- name: custom_activity_log_validated
+  description: |
+    storage description
+  resource: azure.activityLog

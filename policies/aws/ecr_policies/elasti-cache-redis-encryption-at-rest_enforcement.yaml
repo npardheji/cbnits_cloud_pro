@@ -1,0 +1,10 @@
+policies:
+  - name: elasti-cache-redis-encryption-at-rest_enforcement
+    resource: aws.elasticache-group
+    filters:
+      - type: value
+        key: AtRestEncryptionEnabled
+        value: False
+    actions:
+      - type: delete
+        snapshot: False

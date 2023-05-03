@@ -1,0 +1,3 @@
+policies:
+  - name: azure_webapp_latest_go_version_custom_enforcement
+    resource: azure.webappGo

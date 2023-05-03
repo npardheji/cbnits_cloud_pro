@@ -1,0 +1,9 @@
+policies:
+- name: EBS_Volume_Encryption_is_Enabled_validated
+  resource: aws.ebs
+  region: us-west-1
+  filters:
+    - type: value
+      key: Encrypted
+      op: eq
+      value: true

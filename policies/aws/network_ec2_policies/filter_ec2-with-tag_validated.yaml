@@ -1,0 +1,6 @@
+policies:
+  - name: filter_ec2-with-tag_validated
+    resource: aws.ec2
+    filters:
+      - "tag:keytest1": valuetest1
+  

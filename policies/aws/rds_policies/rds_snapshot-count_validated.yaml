@@ -1,0 +1,6 @@
+policies:
+  - name: rds_snapshot-count_validated
+    resource: rds
+    filters:
+      - type: consecutive-snapshots
+        days: 7

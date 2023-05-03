@@ -1,0 +1,8 @@
+policies:
+  - name: azure_require_secure_transfer_validated
+    resource: azure.storage
+    filters:
+    - type: value
+      key: properties.supportsHttpsTrafficOnly
+      op: eq
+      value: false

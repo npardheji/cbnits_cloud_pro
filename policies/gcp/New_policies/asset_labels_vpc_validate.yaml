@@ -1,0 +1,10 @@
+policies:
+  - name: asset_labels_vpc_validate
+    description: |
+      Ensure that asset does not contain network tag 
+    resource: gcp.instance
+    filters:
+    - not:
+      - type: value
+        key: tags
+        value: present

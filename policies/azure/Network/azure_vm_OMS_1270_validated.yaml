@@ -1,0 +1,10 @@
+policies:
+  - name: azure_vm_OMS_1270_validated
+    resource: azure.networksecuritygroup
+    description: |
+      Virtual machine administrative OMI/OMS service port (1270) is publicly accessible
+    filters:
+      - type: ingress
+        access: 'Deny'
+        ipProtocol: '*'
+        ports: '1270'

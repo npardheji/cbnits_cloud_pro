@@ -1,0 +1,13 @@
+policies:
+  - name: azure_app_gateway_WAF_enable_custom_enforcement
+    resource: azure.appGateway-waf
+
+# {
+#     "cloud": "azure",
+#     "policy_type": "Network",
+#     "policy": "azure_app_gateway_WAF_enable_custom_enforcement",
+#     "custom_env": {
+#         "resourceGroupName": "cloud-custodian",
+#         "applicationGatewayName": "chisdvs"
+#     }
+# }

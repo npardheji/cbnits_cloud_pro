@@ -1,0 +1,12 @@
+policies:
+  - name: function_active_enforcement
+    description: |
+      Ensure that deployed fuctions is in inactive
+    resource: gcp.function
+    filters:
+      - not:
+        - type: value
+          key: status
+          value: "ACTIVE"
+    actions: 
+      - delete

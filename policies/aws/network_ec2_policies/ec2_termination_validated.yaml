@@ -1,0 +1,6 @@
+policies:
+  - name: ec2_termination_validated 
+    resource: ec2 
+    filters:
+      - not:
+        - type: termination-protected

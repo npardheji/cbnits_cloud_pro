@@ -1,0 +1,5 @@
+policies:
+- name: custom_ms_deferder_for_storage_enforcement
+  resource: azure.defender-SqlServerVirtualMachines
+  description: |
+    Ensure that Microsoft Defender for Storage is set to 'On'

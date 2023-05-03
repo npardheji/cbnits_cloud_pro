@@ -1,0 +1,16 @@
+policies:
+  - name: azure_outbound_traffic_restricted_all_traffic_enforcement
+    resource: azure.nsgRule_actions
+    protocot: 'TCP'
+    direction: 'Inbound'
+    # filters:
+    #   - type: egress
+    #     access: 'Allow'
+    #     ipProtocol: '*'
+    #     destination: '0.0.0.0/0'
+    #     match: 'any'
+    # actions:
+    #   - type: close
+    #     direction: 'Outbound'
+    #     exceptPorts: '80'
+    #     ipProtocol: '*'

@@ -1,0 +1,10 @@
+policies:
+- name: rds_encrypt_validated
+  resource: aws.rds
+  comment: |
+    Ensure that encryption is enabled for RDS Instances 
+  filters:
+   -  type: value
+      key: StorageEncrypted 
+      op: ne
+      value: false

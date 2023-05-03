@@ -1,0 +1,10 @@
+policies:
+- name: azure_TLS1.2_MySql_database_validated
+  resource: azure.mysql
+  description: |
+    Find all TLS version is not set to 1.2 for MySql flexible database server
+  filters:
+    - type: value
+      key: minimumTlsVersion
+      op: ne
+      value: '1.2'

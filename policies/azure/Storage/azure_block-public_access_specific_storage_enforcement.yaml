@@ -1,0 +1,19 @@
+policies:
+    - name: azure_block-public_access_specific_storage_enforcement
+      description: |
+          Blocks public access to a specific storage accounts with defined IP access rules.
+      resource: azure.storage
+
+      filters:
+      - type: value
+        key: properties.blob.enable
+        value_type: resource_count
+        op: ne
+        value: 0
+      - type: value
+        key: name
+        value: custodiansg
+      actions:
+      - type: set-firewall-rules
+        default-action: Allow
+        ip-rules: []

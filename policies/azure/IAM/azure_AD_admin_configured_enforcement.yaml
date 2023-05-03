@@ -1,0 +1,42 @@
+policies:
+  - name: sqlserver-no-ad-admin-validated
+    resource: azure.sqlserver
+    description: |
+      Find SQL Servers without AD Administrator
+    filters:
+      - type: azure-ad-administrators
+        key: login
+        value: present
+    actions:
+      - type: webhook
+        url: 'https://hooks.slack.com/services/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'
+        body: |-
+          {
+            "attachments": [
+              {
+                "fallback": `CloudCustodian Policy Violation`,
+                "title": policy.description,
+                "color": `danger`,
+                "fields": [
+                  {
+                    "title": `Priority`,
+                    "value": `High`,
+                    "short": `true`
+                  },
+                  {
+                    "title": `Storage Name`,
+                    "value": resource.name,
+                    "short": `true`
+                  },
+                  {
+                    "title": `Storage selfLink`,
+                    "value": resource.selfLink,
+                    "short": `false`
+                  }
+                ],
+                "footer": `Powered By SaumoB`
+                "thumb_url": `https://iheartcraftythings.com/wp-content/uploads/2021/07/6-62.jpg`,
+                "footer_icon": "https://platform.slack-edge.com/img/default_application_icon.png"
+              }
+            ]
+          }

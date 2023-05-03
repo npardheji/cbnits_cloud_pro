@@ -1,0 +1,9 @@
+policies:
+  - name: azure_webapp_http_latest_validated
+    resource: azure.webapp
+    description: |
+      Find the all web app which is not using the latest HTTP.
+    filters:
+      - type: configuration
+        key: http20Enabled
+        value: false

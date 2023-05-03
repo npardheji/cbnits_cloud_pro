@@ -1,0 +1,11 @@
+policies:
+  - name: azure_SMTP_restricted_from_internet_validated
+    resource: azure.networksecuritygroup
+    description: |
+      Ensure that SMTP (TCP:25) is restricted from the Internet
+    filters:
+      - type: ingress
+        access: 'Allow'
+        ipProtocol: 'TCP'
+        ports: '25'
+        source: '0.0.0.0/0'

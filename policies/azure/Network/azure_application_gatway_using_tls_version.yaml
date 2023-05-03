@@ -1,0 +1,9 @@
+policies:
+- name: azure_application_gatway_using_tls_version
+  resource: azure.application-gateway
+  description: Ensure Application Gateway is using the latest version of TLS encryption
+  filters:
+    - type: value
+      key: minimumTlsVersion
+      op: ne
+      value: 1.2

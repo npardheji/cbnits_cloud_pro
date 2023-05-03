@@ -1,0 +1,12 @@
+policies:
+  - name: azure_vm_resize_enforcement
+    resource: azure.vm
+    filters:
+      - type: value
+        key: name
+        op: eq
+        value_type: normalize
+        value: myvmname
+    actions:
+      - type: resize
+        vmSize: Standard_B1ms

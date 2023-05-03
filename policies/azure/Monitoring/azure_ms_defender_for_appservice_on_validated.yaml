@@ -1,0 +1,13 @@
+ policies:
+  - name: azure_ms_defender_for_appservice_on_validated
+    resource: azure.defender-pricing
+    description: | 
+      Ensure that Microsoft Defender for App Service is set to 'On'
+    filters:
+      - name: AppServices
+      - properties.pricingTier: Standard
+
+
+
+
+

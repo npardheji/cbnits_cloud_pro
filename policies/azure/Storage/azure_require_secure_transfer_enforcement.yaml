@@ -1,0 +1,6 @@
+policies:
+    - name: azure_require_secure_transfer_enforcement
+      resource: azure.storage
+      actions:
+      - type: require-secure-transfer
+        value: true

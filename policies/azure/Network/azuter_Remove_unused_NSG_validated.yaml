@@ -1,0 +1,7 @@
+policies:
+  - name: azuter_Remove_unused_NSG_validated
+    resource: azure.networksecuritygroup
+    filters:
+      - type: value
+        key: properties.networkInterfaces
+        value: absent

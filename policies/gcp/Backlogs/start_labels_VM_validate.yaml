@@ -1,0 +1,9 @@
+policies:
+  - name: gcp-labels_start-policy
+    resource: gcp.instance
+    filters:
+      - type: value
+        key: labels.test
+        value: test
+    actions: 
+      - type: start

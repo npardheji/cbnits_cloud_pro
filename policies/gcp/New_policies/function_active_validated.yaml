@@ -1,0 +1,9 @@
+policies:
+  - name: function_active_validated
+    description: |
+      Ensure that deployed fuctions is active
+    resource: gcp.function
+    filters:
+      - type: value
+        key: status
+        value: "ACTIVE"

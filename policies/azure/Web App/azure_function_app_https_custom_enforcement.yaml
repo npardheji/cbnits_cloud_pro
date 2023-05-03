@@ -1,0 +1,3 @@
+policies:
+  - name: azure_function_app_https_custom_enforcement
+    resource: azure.azure.webappHttpsOnly-function

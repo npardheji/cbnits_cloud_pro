@@ -1,0 +1,10 @@
+policies:
+  - name: azure_vm_OMS_5986_validated
+    resource: azure.networksecuritygroup
+    description: |
+      Ensure that SQL Server (MOI/OMS:5986) is publicly accessible
+    filters:
+      - type: ingress
+        access: 'Deny'
+        ipProtocol: '*'
+        ports: '5986'

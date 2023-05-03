@@ -1,0 +1,17 @@
+policies:
+- name: S3-public-block_validated
+  resource: aws.s3
+  comment: |
+    Amazon S3 Block public access (bucket settings) prevents the 
+    accidental or malicious public exposure of data contained within the 
+    respective bucket(s).Amazon S3 Block public access (account 
+    settings) prevents the accidental or malicious public exposure 
+    of data contained within all buckets of the respective AWS 
+    account. This policy identifies all S3 buckets where block 
+    public access (bucket setting) is not implemented.
+  filters:
+    - type: check-public-block
+      BlockPublicAcls: false
+      BlockPublicPolicy: false 
+      IgnorePublicAcls: false 
+      RestrictPublicBuckets: false

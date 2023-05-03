@@ -1,0 +1,14 @@
+policies:
+- name: azure_close_network_security_group_ssh_validated
+  resource: azure.networksecuritygroup
+  description: |
+     Identify all ingress RDP traffic from the internet (any). 
+  filters:
+    - type: ingress
+      ports: '22'
+      access: 'Allow'
+      ipProtocol: TCP
+      source: '*'
+  # actions:
+  # - type: close
+  #   direction: 'Inbound'

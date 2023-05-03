@@ -1,0 +1,11 @@
+policies:
+  - name: azure_Remove_unused_NSG_enforcement
+    resource: azure.networksecuritygroup
+    filters:
+      - and:
+        - type: value
+          key: properties.networkInterfaces
+          value: absent
+        - type: value
+          key: properties.subnets
+          value: absent

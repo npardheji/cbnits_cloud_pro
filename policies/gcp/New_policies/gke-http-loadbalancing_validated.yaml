@@ -1,0 +1,9 @@
+policies:
+- name: gke-http-loadbalancing_validated
+  description: |
+    desc-about-gke-http-loadbalancing
+  resource: gcp.gke-cluster
+  filters:
+  - type: value 
+    key: addonsConfig.httpLoadBalancing
+    value: present 

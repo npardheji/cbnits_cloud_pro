@@ -1,0 +1,9 @@
+policies:
+  - name: azure_outbound_traffic_restricted_all_traffic_validated
+    resource: azure.networksecuritygroup
+    filters:
+      - type: egress
+        access: 'Allow'
+        ipProtocol: '*'
+        destination: '0.0.0.0/0'
+        match: 'any'

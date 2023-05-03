@@ -1,0 +1,9 @@
+policies:
+    - name: azure_add_tag_all_vms_enforcement
+      description: |
+        Adds a tag to all virtual machines
+      resource: azure.vm
+      actions:
+      - type: tag
+        tag: Hello
+        value: syntex

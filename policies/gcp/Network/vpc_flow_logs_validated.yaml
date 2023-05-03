@@ -1,0 +1,8 @@
+policies:
+  - name: vpc_flow_logs_validated
+    description:  Vpc flow logs to be enabled
+    resource: gcp.subnet
+    filters:
+      - enableFlowLogs: empty
+    actions: 
+          - set-private-api

@@ -1,0 +1,9 @@
+policies:
+- name: s3-bucket-logging-is-not-enabled_validated
+  resource: aws.s3
+  comment: |
+    
+  filters:
+    - not:
+      - type: bucket-logging
+        op: disabled

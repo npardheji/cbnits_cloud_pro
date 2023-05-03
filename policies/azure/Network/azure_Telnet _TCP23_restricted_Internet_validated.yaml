@@ -1,0 +1,10 @@
+policies:
+  - name: azure_Telnet _TCP23_restricted_Internet_validated
+    resource: azure.networksecuritygroup
+    filters:
+      - type: ingress
+        access: 'Allow'
+        ipProtocol: 'TCP'
+        ports: '23'
+        source: '0.0.0.0/0'
+        match: 'any'

@@ -1,0 +1,13 @@
+policies:
+- name: ec2-iam-instance-role-is-present_validated
+  resource: aws.ec2
+  comment: |
+    AWS access from within AWS instances can be done either encoding 
+    AWS keys into AWS API calls or by assigning the instance to a 
+    role which has an appropriate permissions policy for the 
+    required access. "AWS Access" means accessing the APIs of AWS in 
+    order to access AWS resources or manage AWS account resources. 
+  filters:
+    - type: value
+      key: IamInstanceProfile
+      value: absent

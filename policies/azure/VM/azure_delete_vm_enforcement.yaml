@@ -1,0 +1,11 @@
+policies:
+    - name: azure_delete_vm_enforcement
+      description: |
+         To stop a virtual machine
+      resource: azure.vm
+      filters:
+        - type: value
+          key: name
+          value: VMwithpubIP
+      actions:
+        - delete

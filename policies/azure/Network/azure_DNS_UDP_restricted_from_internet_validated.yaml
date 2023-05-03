@@ -1,0 +1,11 @@
+policies:
+  - name: azure_DNS_UDP_restricted_from_internet_validated
+    resource: azure.networksecuritygroup
+    description: |
+      Ensure that DNS (UDP:53) is restricted from the Internet
+    filters:
+      - type: ingress
+        access: 'Allow'
+        ipProtocol: 'UDP'
+        ports: '53'
+        source: '0.0.0.0/0'

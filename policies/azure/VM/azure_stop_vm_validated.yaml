@@ -1,0 +1,11 @@
+policies:
+    - name: azure_stop_vm_validated
+      description: |
+         To stop a virtual machine
+      resource: azure.vm
+      filters:
+        - type: value
+          key: name
+          value: vmwithpvtip
+      # actions:
+      #   - stop

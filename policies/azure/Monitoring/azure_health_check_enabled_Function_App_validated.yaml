@@ -1,0 +1,7 @@
+policies:
+  - name: azure_health_check_enabled_Function_App_validated
+    resource: azure.webapp
+    filters:
+      - type: configuration
+        key: healthCheckPath
+        value: present

@@ -1,0 +1,20 @@
+policies:
+    - name: azure_storage_logging_is_enabled_for_table_service_validated
+      resource: azure.storage
+      filters:
+        - and:
+            - type: storage-diagnostic-settings
+              storage-type: table
+              key: logging.read
+              op: eq
+              value: True
+            - type: storage-diagnostic-settings
+              storage-type: table
+              key: logging.write
+              op: eq
+              value: True
+            - type: storage-diagnostic-settings
+              storage-type: table
+              key: logging.delete
+              op: eq
+              value: True

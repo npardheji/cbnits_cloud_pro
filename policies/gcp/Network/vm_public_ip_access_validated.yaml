@@ -1,0 +1,10 @@
+policies:
+    - name: vm_public_ip_access_validated
+      description: |
+        Instance public ip emabled
+      resource: gcp.instance
+      filters:
+        - type: value
+          key:  networkInterfaces[].accessConfigs[].name
+          value:  External NAT
+          op: contains

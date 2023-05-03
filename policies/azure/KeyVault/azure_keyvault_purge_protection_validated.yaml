@@ -1,0 +1,7 @@
+policies:
+    - name:     azure_keyvault_purge_protection_validated
+      resource: azure.keyvault
+      filters:
+            - type:   value
+              key:    properties.accessPolicies[].permissions.enablePurgeProtection
+              value:  true

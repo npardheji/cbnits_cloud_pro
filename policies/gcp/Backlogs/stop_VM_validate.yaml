@@ -1,0 +1,11 @@
+policies:
+  - name: gcp-stop_VM
+    description: |
+      Stops all compute instances that are named "test"
+    resource: gcp.instance
+    filters:
+      - type: value
+        key: name
+        value: cbnits
+    actions:
+      - type: stop

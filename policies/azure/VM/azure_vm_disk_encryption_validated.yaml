@@ -1,0 +1,8 @@
+policies:
+  - name: azure_vm_disk_encryption_validated
+    resource: azure.disk
+    filters:
+      - type: value
+        key: properties.encryptionSettingsCollection.enabled
+        value: true
+        op: ne

@@ -1,0 +1,5 @@
+policies:
+  - name: security-group-default-vpc_validated
+    resource: security-group
+    filters:
+      - default-vpc

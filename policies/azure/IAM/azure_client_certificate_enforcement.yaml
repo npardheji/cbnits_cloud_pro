@@ -1,0 +1,3 @@
+policies:
+  - name: custom_azure_client_certificate_enforcement
+    resource: azure.webapp-client

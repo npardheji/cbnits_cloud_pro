@@ -1,0 +1,8 @@
+policies:
+  - name: azure_AD_admin_configured_validated
+    resource: azure.sqlserver
+    filters:
+      - type: azure-ad-administrators
+        key: login
+        value: present
+    

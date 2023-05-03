@@ -1,0 +1,11 @@
+policies:
+  - name: azure_DNS_TCP_restricted_from_internet_validated
+    resource: azure.networksecuritygroup
+    description: |
+      Ensure that DNS (TCP:53) is restricted from the Internet
+    filters:
+      - type: ingress
+        access: 'Allow'
+        ipProtocol: 'TCP'
+        ports: '53'
+        source: '0.0.0.0/0'

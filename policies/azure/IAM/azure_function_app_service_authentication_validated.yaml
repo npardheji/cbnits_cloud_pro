@@ -1,0 +1,8 @@
+policies:
+  - name: azure_function_app_service_authentication_validated
+    resource: azure.webapp
+    filters:
+      - type: authentication
+        key: enabled
+        value: True
+        op: eq

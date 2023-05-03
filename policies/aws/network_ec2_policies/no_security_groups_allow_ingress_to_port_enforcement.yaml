@@ -1,0 +1,10 @@
+policies:
+  - name: aws-no-security-groups-allow-ingress-to-remote-server-administration-port_enforcement
+    resource: aws.security-group
+    filters:
+      - type: ingress
+        Ports: [22, 3389]
+        CidrV6: "::/0"
+    actions:
+      - type: set-permissions
+        remove-ingress: matched

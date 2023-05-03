@@ -1,0 +1,10 @@
+policies:
+  - name: azure_function_app_latest_tls_validated
+    resource: azure.webapp
+    description: |
+      Find function app is not using the latest version of TLS encryption
+    filters:
+      - type: configuration
+        key: minTlsVersion
+        op: ne
+        value: '1.2'

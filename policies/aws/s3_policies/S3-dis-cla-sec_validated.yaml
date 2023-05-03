@@ -1,0 +1,11 @@
+policies:
+- name: S3-dis-cla-sec_validated
+  resource: aws.account
+  comment: |
+     This policy identifies the account where AWS Macie is not enabled.
+  filters:
+    - not: 
+       - type: check-macie
+         key: status
+         value: Enabled 
+         op: eq

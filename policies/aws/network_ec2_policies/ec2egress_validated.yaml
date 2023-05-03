@@ -1,0 +1,13 @@
+policies:
+  - name: ec2egress_validated
+    resource: security-group
+    comment: |
+      security groups that have outbound rule.
+    filters:
+      - type: egress
+        Ports: [22, 3389]
+      - type: egress
+        Cidr:
+          value_type: cidr
+          op: eq
+          value: 0.0.0.0/0

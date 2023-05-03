@@ -1,0 +1,8 @@
+policies:
+  - name: VPC-ChangesAlarm_validated
+    resource: alarm
+    filters:
+      - type: value
+        key: MetricName
+        op: eq
+        value: vpc_change

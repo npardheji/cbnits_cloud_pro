@@ -1,0 +1,10 @@
+policies:
+- name: azure_data_encryption_set_off_SQL_database_validated
+  resource: azure.sqldatabase
+  description: |
+     Find all SQL Database where TDE is not enabled. 
+  filters:
+    - type: value
+      key: transparentDataEncryption
+      op: ne
+      value: Enabled

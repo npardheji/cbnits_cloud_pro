@@ -1,0 +1,10 @@
+policies:
+- name: cloudtrail-do-not-log-data-write-events_validated
+  resource: aws.cloudtrail
+  comment: |
+    
+  filters:
+    - type: event-selectors
+      key: EventSelectors[].ReadWriteType
+      value: 
+      op: eq

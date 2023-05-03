@@ -1,0 +1,10 @@
+policies:
+  - name: gcp-create-machine-image
+    resource: gcp.instance
+    filters:
+      - type: value
+        key: name
+        value: test
+    actions:
+      - type: create-machine-image
+        name_format: "{instance[name]:.50}-{now:%Y-%m-%d}"

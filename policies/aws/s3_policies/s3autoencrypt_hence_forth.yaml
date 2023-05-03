@@ -1,0 +1,15 @@
+policies:
+  - name: s3autoencrypt_hence_forth
+    resource: s3
+    mode:
+      type: cloudtrail
+      role: ravicloudcustodian
+      events:
+        - source: 's3.amazonaws.com'
+          event: 'CreateBucket'
+          ids: 'requestParameters.bucketName'
+    filters:
+      - type: bucket-encryption
+        state: False
+    actions:
+      - type: set-bucket-encryption

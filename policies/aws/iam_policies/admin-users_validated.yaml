@@ -1,0 +1,8 @@
+policies:
+  - name: admin-users_validated
+    resource: aws.iam-user
+    filters:
+      - type: check-permissions
+        match: allowed
+        actions:
+          - '*:*'

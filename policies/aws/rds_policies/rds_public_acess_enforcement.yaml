@@ -1,0 +1,14 @@
+policies:
+  - name: rds_public_acess_enforcement
+    resource: rds
+    filters:
+      # - DeletionProtection: true
+      - PubliclyAccessible: true
+    actions:
+      - type: modify-db
+        update:
+          - property: 'DeletionProtection'
+            value: false
+          - property: 'PubliclyAccessible'
+            value: false
+        immediate: true

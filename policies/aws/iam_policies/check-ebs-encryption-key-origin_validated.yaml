@@ -1,0 +1,10 @@
+policies:
+  - name: check-ebs-encryption-key-origin_validated
+    resource: aws.account
+    filters:
+     - type: default-ebs-encryption
+       key:
+         type: value
+         key: Origin
+         value: AWS_KMS
+       state: true

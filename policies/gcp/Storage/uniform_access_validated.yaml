@@ -1,0 +1,12 @@
+policies:
+ - name: uniform_access_validated
+   resource: gcp.bucket
+   filters:
+    # - iamConfiguration.uniformBucketLevelAccess.enable: false
+      - type: value
+        key: name
+        value: cbnits_test
+   actions:
+    - type: set-uniform-access
+      # The following is also the default
+      state: True

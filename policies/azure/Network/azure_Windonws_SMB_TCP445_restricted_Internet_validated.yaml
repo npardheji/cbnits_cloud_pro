@@ -1,0 +1,10 @@
+policies:
+  - name: azure_Windonws_SMB_TCP445_restricted_Internet_validated
+    resource: azure.networksecuritygroup
+    filters:
+      - type: ingress
+        access: 'Allow'
+        ipProtocol: 'TCP'
+        ports: '445'
+        source: '0.0.0.0/0'
+        match: 'all'

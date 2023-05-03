@@ -1,0 +1,16 @@
+policies:
+    - name: vm_serial_ports_validated
+      description: |
+        Instance serial-port is emabled
+      resource: gcp.instance
+      filters:
+        - and:
+          - type: value
+            key:  "metadata.items[].key"
+            value: "serial-port-enable"
+            op: contains
+          
+          - type: value
+            key:  "metadata.items[].value"
+            value: "true"
+            op: contains

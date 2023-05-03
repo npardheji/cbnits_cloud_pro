@@ -1,0 +1,32 @@
+policies:
+    - name: SSH_access_is_restricted_from_the_internet_validated
+      description: |
+        Ensuring GCP ssh-access-is-restricted-from-the-internet
+      resource: gcp.firewall
+
+      filters:
+        - and:
+          - type: value
+            key: direction
+            value: INGRESS
+          
+          - type: value
+            key: allowed[].IPProtocol
+            value: tcp
+            op: contains
+
+          - type: value
+            key: sourceRanges
+            value:
+              - 0.0.0.0/0
+            op: equal
+
+          - type: value
+            key: allowed[].ports
+            value:
+              - '22'
+            op: contains
+
+      actions:   # will disable the firewall rule if there is any ssh port present
+        - type: modify
+          disabled: true

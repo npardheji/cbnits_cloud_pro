@@ -1,0 +1,10 @@
+policies:
+- name: azure_application_gateway_use_Https_protocol_validated
+  resource: azure.application-gateway
+  comment: |
+    Application Gateway is using Https protocol
+  filters:
+    - type: value
+      key: properties.httpListeners[0].properties.protocol
+      op: ne
+      value: Https

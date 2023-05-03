@@ -1,0 +1,8 @@
+policies:
+  - name: NetworkGatewayChangesAlarm_validated
+    resource: alarm
+    filters:
+      - type: value
+        key: MetricName
+        op: eq
+        value: NetworkGatewaysChanges

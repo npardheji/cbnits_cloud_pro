@@ -1,0 +1,10 @@
+policies:
+  - name: no_tag_vm_validated
+    description: |
+      It is recommended to add a tags in network 
+    resource: gcp.instance
+    filters:
+    - not:
+      - type: value 
+        key: tags.items[]
+        value: present

@@ -1,0 +1,11 @@
+policies:
+  - name: azure_SqlServer_UDP_restricted_from_internet_validated
+    resource: azure.networksecuritygroup
+    description: |
+      Ensure that SQL Server (UDP:1434) is restricted from the Internet
+    filters:
+      - type: ingress
+        access: 'Allow'
+        ipProtocol: 'UDP'
+        ports: '1434'
+        source: '0.0.0.0/0'

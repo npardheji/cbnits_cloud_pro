@@ -1,0 +1,8 @@
+policies:  
+  - name: fuction_event_validated
+    resource: gcp.function
+    filters:
+      - not:
+          - type: value
+            key: eventTrigger
+            value: empty

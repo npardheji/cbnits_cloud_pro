@@ -1,0 +1,16 @@
+policies:
+    - name: azure_all_storage_block_public_access_validated
+      description: |
+          Blocks public access to all storage accounts with defined IP access rules.
+      resource: azure.storage
+
+      filters:
+      - type: value
+        key: properties.blob.enable
+        value_type: resource_count
+        op: ne
+        value: 0
+      # actions:
+      # - type: set-firewall-rules
+      #   default-action: Allow
+      #   ip-rules: []

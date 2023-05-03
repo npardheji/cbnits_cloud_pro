@@ -1,0 +1,10 @@
+policies:
+  - name: azure_audit_role_assignment_RBAC_valideted
+    resource: azure.roleassignment
+    description: | 
+      Ensure to audit role assignments that have implicit 'RBAC' permissions
+    filters:
+      - type: role
+        key: properties.roleName
+        op: regex
+        value: Role Based Access Control Administrator

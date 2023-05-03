@@ -1,0 +1,7 @@
+policies:
+  - name: stop-ec2-with-tag_enforcement
+    resource: aws.ec2
+    filters:
+      - "tag:keytest1": valuetest1
+    actions:
+      - stop

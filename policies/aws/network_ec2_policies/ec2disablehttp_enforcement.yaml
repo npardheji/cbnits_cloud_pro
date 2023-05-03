@@ -1,0 +1,7 @@
+policies:
+  - name: ec2disablehttp_enforcement
+    resource: ec2
+    region: us-west-2
+    actions:
+      - type: update-instance-enas
+        enabled: false

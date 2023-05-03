@@ -1,0 +1,11 @@
+policies:
+  - name: azure_PostgreSQL_restricted_from_internet_validated
+    resource: azure.networksecuritygroup
+    description: |
+      Ensure that PostgreSQL (TCP:5432) is restricted from the Internet
+    filters:
+      - type: ingress
+        access: 'Allow'
+        ipProtocol: 'TCP'
+        ports: '5432'
+        source: '0.0.0.0/0'

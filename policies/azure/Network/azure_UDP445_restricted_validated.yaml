@@ -1,0 +1,12 @@
+policies:
+  - name: azure_UDP445_restricted_validated
+    resource: azure.networksecuritygroup
+    filters:
+      - type: ingress
+        access: 'Allow'
+        ipProtocol: 'UDP'
+        ports: '445'
+        source: '0.0.0.0/0'
+    actions:
+      - type: close
+        direction: 'Inbound'

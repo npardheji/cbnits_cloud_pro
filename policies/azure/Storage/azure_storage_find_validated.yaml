@@ -1,0 +1,3 @@
+policies:
+    - name: azure_storage_find_validated
+      resource: azure.storage

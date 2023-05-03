@@ -1,0 +1,8 @@
+policies:
+  - name: azure_ms_defender_SQL_database_validated
+    resource: azure.defender-pricing
+    description: |
+      Ensure that Microsoft Defender for SQL Database is set to 'On'
+    filters:
+      - name: SqlServers
+      - properties.pricingTier: Free

@@ -1,0 +1,13 @@
+policies:
+  - name: azure_MySql_restricted_from_internet_validated
+    resource: azure.networksecuritygroup
+    description: |
+      Ensure that MySQL (TCP:3306) is restricted from the Internet
+    filters:
+      - type: ingress
+        access: 'Allow'
+        ipProtocol: 'TCP'
+        ports: '3306'
+        source: '0.0.0.0/0'
+
+

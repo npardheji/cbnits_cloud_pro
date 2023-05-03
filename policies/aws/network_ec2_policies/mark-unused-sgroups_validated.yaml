@@ -1,0 +1,10 @@
+policies:
+  - name: mark-unused-sgroups_validated
+    resource: ec2.security-group
+    region: us-west-2
+    filters:
+      - type: unused
+    actions:
+      - type: mark-for-op
+        op: delete
+        days: 7

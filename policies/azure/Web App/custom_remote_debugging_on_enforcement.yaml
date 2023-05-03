@@ -1,0 +1,3 @@
+policies:
+  - name: custom_azure_health_check_enable_enforcement
+    resource: azure.webapp-debug

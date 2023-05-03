@@ -1,0 +1,10 @@
+policies:
+- name: azure_SSL_connection_disable_standard_MySQL_database_validated
+  resource: azure.mysql
+  description: |
+     Identify MySQL Database Server where SSL is not enabled.
+  filters:
+    - type: value 
+      key: sslEnforcement
+      op: ne
+      value: Enabled

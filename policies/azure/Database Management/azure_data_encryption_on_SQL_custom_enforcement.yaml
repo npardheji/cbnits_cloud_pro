@@ -1,0 +1,3 @@
+policies:
+  - name: azure_data_encryption_on_SQL_custom_enforcement
+    resource: azure.sql-TDE

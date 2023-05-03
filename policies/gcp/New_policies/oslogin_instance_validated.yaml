@@ -1,0 +1,9 @@
+policies:
+  - name: oslogin_instance_validated
+    resource: gcp.instance
+    filters:
+    - type: value
+      key: fingerprint
+      # op: contains
+      # value: "compute#metadata"
+      value: present 

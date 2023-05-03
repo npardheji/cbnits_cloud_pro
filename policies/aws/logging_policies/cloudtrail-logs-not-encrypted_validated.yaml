@@ -1,0 +1,11 @@
+policies:
+- name: cloudtrail-logs-not-encrypted_validated
+  resource: aws.s3
+  comment: |
+    Identify cloudtrails logs that are not encrypted at rest. 
+    ConfiguringCloudTrail to use SSE-KMS provides additional 
+    confidentialitycontrols on log data as a given user must have 
+    S3 read permission on the corresponding log bucket and must be 
+    granted decrypt permission by the CMK policy.
+  filters:
+    - KmsKeyId: empty
