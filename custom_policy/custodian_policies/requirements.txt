@@ -1,0 +1,3 @@
+Flask==2.2.2
+c7n-azure==0.7.20
+pyyaml
